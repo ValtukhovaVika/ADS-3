@@ -35,8 +35,7 @@ std::string infx2pstfx(std::string inf) {
                 stack1.pop();
                 if (stack1.isEmpty())
                     top = 0;
-            }
-            else {
+            } else {
                 while (!stack1.isEmpty() && priority(stack1.get()) >= prior) {
                     str.push_back(stack1.get());
                     str.push_back(' ');
@@ -46,8 +45,7 @@ std::string infx2pstfx(std::string inf) {
                     top = inf[i];
                 stack1.push(inf[i]);
             }
-        }
-        else {
+        } else {
             str.push_back(inf[i]);
             str.push_back(' ');
         }
