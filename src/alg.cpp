@@ -21,7 +21,8 @@ std::string infx2pstfx(std::string inf) {
         int prior;
         prior = priority(inf[i]);
         if (prior > -1) {
-            if ((prior == 0 || prior > priority(top) || stack1.isEmpty()) && inf[i] != ')') {
+            if ((prior == 0 || prior > priority(top) || 
+                 stack1.isEmpty()) && inf[i] != ')') {
             if (stack1.isEmpty())
                 top = inf[i];
             stack1.push(inf[i]); }
@@ -74,7 +75,7 @@ int calculating(char operate, int num1, int num2) {
 
 int eval(std::string pst) {
     TStack<int> stack2;
-    int result = 0,i = 0;
+    int result = 0, i = 0;
     char x = pst[i];
     while (x) {
         if (x >= '0' && x <= '9') {
@@ -86,8 +87,7 @@ int eval(std::string pst) {
                 x = pst[++i];
             }
             stack2.push(insertInt);
-        }
-        else {
+        } else {
             char operate = x;
             i++;
             int num2 = stack2.get();
@@ -99,7 +99,8 @@ int eval(std::string pst) {
         }
         if (i < pst.size())
             x = pst[++i];
-        else x = 0;
+        else 
+            x = 0;
     }
     result = stack2.get();
     stack2.pop();
