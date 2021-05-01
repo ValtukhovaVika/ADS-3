@@ -21,12 +21,12 @@ std::string infx2pstfx(std::string inf) {
         int prior;
         prior = priority(inf[i]);
         if (prior > -1) {
-            if ((prior == 0 || prior > priority(top) || 
+            if ((prior == 0 || prior > priority(top) ||
                  stack1.isEmpty()) && inf[i] != ')') {
             if (stack1.isEmpty())
                 top = inf[i];
-            stack1.push(inf[i]); }
-            else if (inf[i] == ')') {
+            stack1.push(inf[i]); 
+            } else if (inf[i] == ')') {
                 while (stack1.get() != '(') {
                     str.push_back(stack1.get());
                     str.push_back(' ');
@@ -97,7 +97,7 @@ int eval(std::string pst) {
         }
         if (i < pst.size())
             x = pst[++i];
-        else 
+        else
             x = 0;
     }
     result = stack2.get();
