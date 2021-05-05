@@ -25,7 +25,7 @@ std::string infx2pstfx(std::string inf) {
                  stack1.isEmpty()) && inf[i] != ')') {
             if (stack1.isEmpty())
                 top = inf[i];
-            stack1.push(inf[i]); 
+            stack1.push(inf[i]);
             } else if (inf[i] == ')') {
                 while (stack1.get() != '(') {
                     str.push_back(stack1.get());
